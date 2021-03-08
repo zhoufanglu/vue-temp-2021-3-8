@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="p-home">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -16,3 +16,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.p-home{
+  color: $theme;
+}
+</style>

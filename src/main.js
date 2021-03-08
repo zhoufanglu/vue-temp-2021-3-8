@@ -5,6 +5,13 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+//element
+import '@/config/element.js'
+//api
+import api from '@/request/api/index'
+Vue.prototype.$api = api
+
+
 new Vue({
   router,
   store,
