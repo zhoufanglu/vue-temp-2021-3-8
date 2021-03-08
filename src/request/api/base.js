@@ -3,7 +3,7 @@
  */
 
 //接口统一使用dynamicUrl变量
-const dynamicUrl = '1.1.1.1'//process.env.VUE_APP_SERVER_URL
+const dynamicUrl = process.env.VUE_APP_SERVER_URL// 接口ip
 
 //console.log('api-path', process.env.VUE_APP_SERVER_URL)
 

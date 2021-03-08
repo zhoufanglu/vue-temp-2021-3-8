@@ -11,6 +11,7 @@ import '@/config/element.js'
 import api from '@/request/api/index'
 Vue.prototype.$api = api
 
+console.log('-----------环境变量-当前环境-----------', process.env.VUE_APP_ENV)
 
 new Vue({
   router,
