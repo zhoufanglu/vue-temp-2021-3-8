@@ -6,8 +6,13 @@ import { Message } from 'element-ui'
 
 import axios from 'axios'
 
+
 //vuex对象
 import store from '@/store/index'
+
+import domMessage from '@/util/tool'
+const messageOnce = new domMessage()
+
 
 const headerConfig = {
 	json: {
@@ -86,7 +91,8 @@ instance.interceptors.response.use(
 			//store.dispatch('changeNetwork', false);
 			//router.push({path:'refresh'})
 			console.log('其他错误', response)
-			Message.error('网络异常，请稍后重试')
+			messageOnce.error('网络异常，请稍后重试')
+			//Message.error('网络异常，请稍后重试')
 		}
 	}
 )
