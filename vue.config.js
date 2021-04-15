@@ -69,5 +69,12 @@ module.exports = {
         }
       }
     }
+  },
+  chainWebpack: config => {
+    //webpack的可视化资源分析工具,只在analyz环境下生效
+    process.env.VUE_APP_ENV === "analyzer" &&
+    config
+      .plugin('webpack-bundle-analyzer')
+      .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
   }
 }

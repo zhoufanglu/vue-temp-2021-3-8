@@ -21,7 +21,7 @@ export default {
   methods: {
     async loadData() {
       const res = await this.$api.user.test({userName:'aa', password:'123'})
-      console.log(24, res)
+      console.log(24, res.data)
       const res1 = await this.$api.user.test({userName:'aa', password:'123'})
       const res2 = await this.$api.user.test({userName:'aa', password:'123'})
     }
