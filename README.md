@@ -52,3 +52,11 @@ meta: {
 
 5、src/request/api/index.js -- 请求模块入口 
 
+## 环境
+1、analyzer          - 打包分析环境  
+2、development       - 开发环境  
+3、production        - 生产环境  
+4、test              - 测试环境  
+
+
+

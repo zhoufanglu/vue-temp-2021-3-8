@@ -6,7 +6,6 @@
   </div>
 </template>
 <script>
-//import {user} from
 export default {
   name: '',
   components: {},
@@ -14,6 +13,7 @@ export default {
     return {}
   },
   created() {
+    this.$message('欢迎来到A页面')
     this.loadData()
   },
   mounted() {
