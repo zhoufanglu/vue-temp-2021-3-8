@@ -2,8 +2,6 @@ const path = require('path')
 
 module.exports = {
   /* 部署应用包的基本URL */
-  /* baseUrl 从 Vue CLI 3.3 起已弃用 ，请使用publicPath */
-  //  baseUrl: process.env.NODE_ENV === "production" ? "./" : "./",
   publicPath: process.env.NODE_ENV === "production" ? "./" : "./",
   /* 生产环境构建文件的目录 defalut: dist */
   outputDir: process.env.outputDir,

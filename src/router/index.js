@@ -8,6 +8,9 @@ import module_2 from '@/router/module/module_2'
 
 import {Message} from 'element-ui'
 
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 
 Vue.use(VueRouter)
 
@@ -41,7 +44,14 @@ router.beforeEach((to, from, next)=>
     })
     return false
   }
+  //nprogress
+  NProgress.start()
   next()
+})
+
+
+router.afterEach(() => {
+  NProgress.done()
 })
 
 export default router

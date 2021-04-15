@@ -38,7 +38,7 @@ meta: {
 ## vuex
 1、vuex-persistedstate 刷新后不丢失插件 
 
-2、模块划分 
+2、模块划分
 
 
 ## 接口请求
