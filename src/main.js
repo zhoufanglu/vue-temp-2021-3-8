@@ -10,6 +10,10 @@ import '@/config/element.js'
 //api
 import api from '@/request/api/index'
 Vue.prototype.$api = api
+//mock
+import {mockFn} from '@/mock/mock.js'
+mockFn(true)
+
 
 console.log('-----------环境变量-当前环境-----------', process.env.VUE_APP_ENV)
 
