@@ -13,7 +13,7 @@ export default {
     return {}
   },
   created() {
-    this.$message('欢迎来到A页面')
+    //this.$message('欢迎来到A页面')
     this.loadData()
   },
   mounted() {

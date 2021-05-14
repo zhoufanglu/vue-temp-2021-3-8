@@ -6,15 +6,10 @@ import Home from '@/views/Home'
 import module_1 from '@/router/module/module_1'
 import module_2 from '@/router/module/module_2'
 
-import {Message} from 'element-ui'
-
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
-
 
 Vue.use(VueRouter)
 
-const routes = [
+const constantRoutes = [
   {
     path: '/',
     name: 'Home',
@@ -27,31 +22,18 @@ const routes = [
   ...module_2
 ]
 
-const router = new VueRouter({
-  routes
-})
+const createRouter = () =>
+  new VueRouter({
+    // mode: 'history', // require service support
+    scrollBehavior: () => ({ y: 0 }),
+    routes: constantRoutes
+  })
 
-// 在守卫中访问元信息
-router.beforeEach((to, from, next)=>
-{
-  let requireAuth = to.matched.some(record => record.meta.requireAuth)
-  //console.log(35, requireAuth)  //可自己打印出来看一下
-  if(requireAuth){
-    Message({
-      showClose: true,
-      message: `没有权限访问${to.name}页面,要访问请配置requireAuth`,
-      type: 'warning'
-    })
-    return false
-  }
-  //nprogress
-  NProgress.start()
-  next()
-})
+export function resetRouter() {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // reset router
+}
 
-
-router.afterEach(() => {
-  NProgress.done()
-})
+const router = createRouter()
 
 export default router
