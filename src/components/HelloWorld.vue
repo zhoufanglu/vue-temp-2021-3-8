@@ -1,5 +1,9 @@
 <template>
   <div class="hello">
+    <div class="row">
+      <h1>标题A</h1>
+      <h1>标题B</h1>
+    </div>
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -42,6 +46,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.hello{
+  .row{
+    display: flex;
+    align-items: center;
+    h1{
+      @include vertical-center;
+      flex: 1;
+      border: solid 1px red;
+      height: 100px;
+    }
+  }
+}
 h3 {
   margin: 40px 0 0;
 }

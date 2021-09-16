@@ -16,6 +16,7 @@ Vue.prototype.$api = api
 import {mockFn} from '@/mock/mock.js'
 mockFn(true)
 
+import '@/util/rem'
 
 console.log('-----------环境变量-当前环境-----------', process.env.VUE_APP_ENV)
 

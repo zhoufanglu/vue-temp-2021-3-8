@@ -5,12 +5,18 @@ const mod_1 = {
       token: '',
       userName: 'test',
     },
+    theme: {
+      color: '#409EFF'
+    }
   },
 
   mutations: {
     SET_RISK_USER_INFO(state, val) {
       state.userInfo = Object.assign(state.userInfo, val)
     },
+    setTheme(state,val) {
+      state.theme = val
+    }
   },
 
   actions: {

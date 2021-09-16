@@ -12,6 +12,13 @@ const whiteList = ['/login', '/404']
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
+//添加路由测试
+router.addRoute('Home',{
+  path: '/test',
+  name: 'test',
+  component: () => import('@/views/module_1/a.vue')
+})
+console.log(21, router.getRoutes())
 
 // 在守卫中访问元信息
 router.beforeEach((to, from, next)=>
@@ -19,7 +26,7 @@ router.beforeEach((to, from, next)=>
   //nprogress
   NProgress.start()
   //获取token
-  let { token } = store.state.user.userInfo
+  let { token } = store.state.mod_1.userInfo
 
   console.log(24, token)
   if(token){
@@ -35,9 +42,10 @@ router.beforeEach((to, from, next)=>
       next()
     }
   }else{
-    next('/login')
+    next()
+    //next('/login')
   }
-  next()
+  //next()
 })
 
 

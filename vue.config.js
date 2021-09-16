@@ -39,13 +39,22 @@ module.exports = {
     // 是否使用css分离插件 ExtractTextPlugin
     extract: true,
     // 开启 CSS source maps?
-    sourceMap: false,
+    sourceMap: true,
     // css预设器配置项
     loaderOptions: {
       sass: {
         //以下两种都可以
         prependData: `@import "~@a/scss/entrance.scss";`
         //prependData: `@import "./src/assets/scss/entrance.scss";`
+      },
+      postcss: {
+        plugins: [
+          require('postcss-pxtorem')({
+            rootValue : 16, // 换算的基数
+            selectorBlackList  : [], // 忽略转换正则匹配项
+            propList   : ['*'],
+          }),
+        ]
       }
     },
     // 启用 CSS requireModuleExtension for all css / pre-processor files.
