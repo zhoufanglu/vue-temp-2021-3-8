@@ -19,6 +19,6 @@ export default {
 
 <style lang="scss" scoped>
 .p-home{
-  color: $theme;
+  color: red;
 }
 </style>
