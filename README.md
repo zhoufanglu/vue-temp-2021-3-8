@@ -58,5 +58,12 @@ meta: {
 3、production        - 生产环境  
 4、test              - 测试环境  
 
+## 路由动画
+* `router-view`外层套上`<trasition> 组件`， 增加`transition.scss`样式文件 
+```js
+    <transition name="fade" mode="out-in">
+      <router-view/>
+    </transition>
+```
 
 
